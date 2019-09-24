@@ -1,0 +1,443 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgb(119, 119, 119);
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}
+
+.content {
+    height: 20vh;
+    background-image: url(newsimage/black-blue-computer-keyboard-1194713.jpg);
+    background-color: rgb(87, 87, 87);
+    color: #f2f2f2;
+    background-blend-mode: luminosity;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+
+/* Navigation styles start here for
+all pages*/
+
+header {
+    background-color: rgba(156, 156, 156, 0.97);
+    text-align: center;
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* To allow it to gain focus, making it tabbable */
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus~.nav-toggle-label {
+    outline: 1px solid rgba(156, 156, 156, 0.1);
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: rgba(156, 156, 156, 0.95);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+/* Start page index*/
+
+.container-flex {
+    background-color: rgb(255, 255, 255);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: unset;
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.newsbox-1 {
+    background-color: rgb(223, 222, 222);
+    flex-wrap: wrap;
+    margin: 10px;
+    align-content: center;
+}
+
+.newsbox-2 {
+    background-color: rgb(170, 141, 141);
+    flex-wrap: wrap;
+    margin: 10px;
+    align-content: center;
+}
+
+.newsbox-3 {
+    background-color: rgb(170, 141, 141);
+    flex-wrap: wrap;
+    margin: 10px;
+    align-content: center;
+}
+
+.newsbox-4 {
+    background-color: rgb(170, 141, 141);
+    flex-wrap: wrap;
+    margin: 10px;
+    align-content: center;
+}
+
+.image-news {
+    width: 265px;
+    height: 270px;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    border-radius: 5px;
+    align-content: center;
+}
+
+.news-headline {
+    display: flex;
+    align-content: center;
+}
+
+.news-info {
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.info {
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+main {
+    overflow: auto;
+    padding-bottom: 100px;
+}
+
+
+/*****Contact page*******/
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: rgb(127, 122, 128);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(93, 136, 120);
+}
+
+input[type=reset]:hover {
+    background-color: rgb(133, 83, 87);
+}
+
+
+/* Style the container/contact section */
+
+.container-forms {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 15px;
+}
+
+
+/* Create two columns that float next to eachother */
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.column a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/****About page***********/
+
+
+/***Random Gallery page***/
+
+.p-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin: 15px;
+}
+
+.portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+
+/******Footer******/
+
+.f-wrapper {
+    width: 100%;
+    height: auto;
+    display: grid;
+    background-color: #000000;
+    color: #f2f2f2;
+    position: sticky;
+    padding: 5px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    top: 100%;
+    left: 100%;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    width: 150px;
+    height: 60px;
+    background-color: #000000;
+    line-height: 80px;
+    justify-items: center;
+    font-size: 18px;
+    margin: 0 10px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+footer ul li a .fab,
+.fas {
+    justify-items: right;
+    position: relative;
+    color: rgb(255, 255, 255);
+    transition: .5s;
+    font-size: 18px;
+}
+
+footer ul li a:link {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer ul li a:hover .fab {
+    transform: rotateY(360deg);
+}
+
+footer ul li a:hover .fas {
+    transform: rotateY(360deg);
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, 
+make the two columns stack on top of each other instead of next 
+to each other */
+
+@media screen and (max-width: 600px) {
+    .column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    .column,
+    input[type=reset] {
+        width: 100%;
+        margin: 5px 0px 0px 0px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr;
+    }
+    .logo {
+        grid-column: 2 / 3;
+    }
+    nav {
+        fill-opacity: unset;
+        /* this causes issues with Edge, since it's unsupported */
+        /* the following lines added for Edge support */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1, 1);
+        background: none;
+        top: initial;
+        left: initial;
+        /* End of Edge support stuff */
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    nav ul,
+    .container-flex,
+    .info {
+        display: flex;
+    }
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
